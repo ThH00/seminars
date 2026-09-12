@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /seminars.json
+---
+[
+{% for seminar in site.seminars %}
+  {% assign s_combo = seminar.date | date: "%Y-%m-%d" | append: " " | append: seminar.start_time %}
+  {% assign e_combo = seminar.date | date: "%Y-%m-%d" | append: " " | append: seminar.end_time %}
+  {
+    "title": {{ seminar.title | jsonify }},
+    "start": {% if seminar.start_time %}{{ s_combo | date: "%Y-%m-%dT%H:%M:%S" | jsonify }}{% else %}{{ seminar.date | date: "%Y-%m-%d" | jsonify }}{% endif %},
+    "end": {% if seminar.end_time %}{{ e_combo | date: "%Y-%m-%dT%H:%M:%S" | jsonify }}{% else %}null{% endif %},
+    "url": {{ seminar.url | relative_url | jsonify }},
+    "speaker": {{ seminar.speaker | jsonify }},
+    "location": {{ seminar.location | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

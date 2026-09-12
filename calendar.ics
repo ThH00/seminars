@@ -1,0 +1,22 @@
+---
+layout: null
+permalink: /calendar.ics
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//{{ site.title }}//Seminar Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:{{ site.title }}
+{% for seminar in site.seminars %}{% if seminar.start_time and seminar.end_time %}{% assign s_combo = seminar.date | date: "%Y-%m-%d" | append: " " | append: seminar.start_time %}{% assign e_combo = seminar.date | date: "%Y-%m-%d" | append: " " | append: seminar.end_time %}
+BEGIN:VEVENT
+UID:{{ seminar.url | remove: "/" }}@{{ site.url | replace: "https://", "" | replace: "http://", "" | default: "seminar-site.local" }}
+DTSTAMP:{{ site.time | date: "%Y%m%dT%H%M%SZ" }}
+DTSTART:{{ s_combo | date: "%Y%m%dT%H%M%S" }}
+DTEND:{{ e_combo | date: "%Y%m%dT%H%M%S" }}
+SUMMARY:{{ seminar.title | replace: ",", "\," | replace: ";", "\;" }}
+LOCATION:{{ seminar.location | replace: ",", "\," | replace: ";", "\;" }}
+DESCRIPTION:{{ seminar.abstract | strip_newlines | replace: ",", "\," | replace: ";", "\;" }}
+URL:{{ site.url }}{{ seminar.url | relative_url }}
+END:VEVENT
+{% endif %}{% endfor %}END:VCALENDAR
