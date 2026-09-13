@@ -1,0 +1,66 @@
+---
+layout: default
+---
+{% assign start_combo = page.date | date: "%Y-%m-%d" | append: " " | append: page.start_time %}
+{% assign end_combo = page.date | date: "%Y-%m-%d" | append: " " | append: page.end_time %}
+
+<article class="seminar">
+  <p><a href="{{ '/' | relative_url }}">&larr; Back to all seminars</a></p>
+
+  <h1>{{ page.title }}</h1>
+
+  <div class="seminar-header">
+    {% if page.photo %}
+      <img class="speaker-photo" src="{{ page.photo | relative_url }}" alt="Photo of {{ page.speaker }}">
+    {% endif %}
+    <div class="seminar-meta">
+      <p><strong>Speaker:</strong> {{ page.speaker }}{% if page.affiliation %}, {{ page.affiliation }}{% endif %}</p>
+      <p><strong>Date:</strong> {{ page.date | date: "%A, %B %-d, %Y" }}
+        {% if page.start_time %} &middot; {{ start_combo | date: "%-I:%M %p" }}{% if page.end_time %}–{{ end_combo | date: "%-I:%M %p" }}{% endif %}{% endif %}
+      </p>
+      {% if page.location %}<p><strong>Location:</strong> {{ page.location }}</p>{% endif %}
+      {% if page.tags %}
+        <p class="tags">
+          {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if page.flyer %}
+    <img class="flyer" src="{{ page.flyer | relative_url }}" alt="Flyer for {{ page.title }}">
+  {% endif %}
+
+  {% if page.abstract %}
+    <h2>Abstract</h2>
+    <p>{{ page.abstract }}</p>
+  {% endif %}
+
+  {% if page.bio %}
+    <h2>Speaker Bio</h2>
+    <p>{{ page.bio }}</p>
+  {% endif %}
+
+  {% if page.recording %}
+    <p><a href="{{ page.recording }}">Watch the recording &rarr;</a></p>
+  {% endif %}
+
+  {% if page.start_time and page.end_time %}
+    {% assign gcal_start = start_combo | date: "%Y%m%dT%H%M%S" %}
+    {% assign gcal_end = end_combo | date: "%Y%m%dT%H%M%S" %}
+    {% assign outlook_start = start_combo | date: "%Y-%m-%dT%H:%M:%S" %}
+    {% assign outlook_end = end_combo | date: "%Y-%m-%dT%H:%M:%S" %}
+    <div class="add-to-calendar">
+      <strong>Add this seminar to your calendar:</strong><br>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text={{ page.title | url_encode }}&dates={{ gcal_start }}/{{ gcal_end }}&location={{ page.location | url_encode }}&details={{ page.abstract | strip_newlines | url_encode }}">Google Calendar</a>
+      &middot;
+      <a href="https://outlook.office.com/calendar/0/deeplink/compose?subject={{ page.title | url_encode }}&startdt={{ outlook_start }}&enddt={{ outlook_end }}&location={{ page.location | url_encode }}&body={{ page.abstract | strip_newlines | url_encode }}&path=/calendar/action/compose&rru=addevent">Outlook</a>
+      &middot;
+      <a href="{{ '/calendar.ics' | relative_url }}">Subscribe to the full calendar &rarr;</a>
+    </div>
+  {% endif %}
+
+  <div class="seminar-body">
+    {{ content }}
+  </div>
+</article>
