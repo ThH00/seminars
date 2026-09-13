@@ -1,7 +1,7 @@
 title: "Department Seminar Series"
 description: "Fall 2026 seminar schedule, calendar, and flyers"
-baseurl: "" # subpath, e.g. "/seminars" if hosted at username.github.io/seminars — leave "" for a root site
-url: "" # e.g. "https://yourusername.github.io"
+baseurl: "/seminars" # subpath, e.g. "/seminars" if hosted at username.github.io/seminars — leave "" for a root site
+url: "https://thh00.github.io/seminars/" # e.g. "https://yourusername.github.io"
 
 # --- Collections ---
 # Every markdown file in _seminars/ becomes one seminar page.
