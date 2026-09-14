@@ -15,7 +15,6 @@ bio: >
   Optional 2-3 sentence speaker bio.
 recording: ""             # fill in after the talk if you post a recording link
 tags: [seminar, topic-area]
-published: false           # keeps this template itself off the live site — DELETE this line in the copy you make for a real seminar
 ---
 
 Optional extra body content goes here — directions, Zoom link details,

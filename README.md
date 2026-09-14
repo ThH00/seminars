@@ -20,20 +20,14 @@ live:
   `TBD — location to be confirmed with the Mechanical Engineering Department`
   and end time defaults to a placeholder 1 hour after the start. Please fill
   in the real values once known.
-- **Speaker photos** — real headshots were found for 9 of the 12 speakers
-  (3 cropped from their own flyer, 6 found on official university/personal
-  pages). Three speakers had no usable photo available (Marwan Hariz, Nura
-  Habbaba, Elie Ghossain) and currently show a plain maroon initials
-  placeholder in `assets/speakers/` — swap in a real photo for these
-  whenever you have one, by replacing the image file (same filename) or
-  updating the `photo:` path in that seminar's front matter.
 
 ## Structure
 
 ```
 _config.yml           site settings
 _seminars/             ← one .md file per seminar (this is what you edit each week)
-  TEMPLATE.md           copy this to add a new seminar
+TEMPLATE.md             copy this to add a new seminar (lives outside _seminars/ on purpose — see below)
+
 assets/flyers/          flyer images referenced by seminars
 assets/css/style.css    styling
 index.md                homepage (upcoming / past, auto-generated)
@@ -44,15 +38,16 @@ _layouts/                page templates (you shouldn't need to touch these)
 
 ## Adding a new seminar (the only regular task)
 
-1. Copy `_seminars/TEMPLATE.md` to a new file named `_seminars/YYYY-MM-DD-short-slug.md`
-   (the date in the filename doesn't have to match `date:` in front matter, but
-   keeping them the same avoids confusion).
+1. Copy `TEMPLATE.md` (in the repo root) into `_seminars/` as a new file named
+   `YYYY-MM-DD-short-slug.md` (the date in the filename doesn't have to match
+   `date:` in front matter, but keeping them the same avoids confusion).
+   `TEMPLATE.md` deliberately lives outside `_seminars/` — Jekyll treats every
+   file inside `_seminars/` as a real seminar, so if the template lived there
+   it would show up as a fake "Seminar Title Goes Here" listing on the site.
 2. Fill in the front matter: `title`, `speaker`, `affiliation`, `date`,
    `start_time`, `end_time` (24-hour `HH:MM`, e.g. `"15:00"` — these drive the
    calendar and the "Add to Outlook/Google" links), `location`, `flyer`,
-   `photo`, `abstract`, `bio`, `tags`. **Delete the `published: false` line**
-   that came from the template — that line is only there to keep the blank
-   template itself from showing up as a fake seminar on the live site.
+   `photo`, `abstract`, `bio`, `tags`.
 3. Drop the flyer image (PDF-exported PNG/JPG works best) into `assets/flyers/`
    and point `flyer:` at it, e.g. `/assets/flyers/2026-10-15-doe.png`. Drop a
    square headshot of the speaker into `assets/speakers/` and point `photo:`
