@@ -50,7 +50,9 @@ _layouts/                page templates (you shouldn't need to touch these)
 2. Fill in the front matter: `title`, `speaker`, `affiliation`, `date`,
    `start_time`, `end_time` (24-hour `HH:MM`, e.g. `"15:00"` — these drive the
    calendar and the "Add to Outlook/Google" links), `location`, `flyer`,
-   `photo`, `abstract`, `bio`, `tags`.
+   `photo`, `abstract`, `bio`, `tags`. **Delete the `published: false` line**
+   that came from the template — that line is only there to keep the blank
+   template itself from showing up as a fake seminar on the live site.
 3. Drop the flyer image (PDF-exported PNG/JPG works best) into `assets/flyers/`
    and point `flyer:` at it, e.g. `/assets/flyers/2026-10-15-doe.png`. Drop a
    square headshot of the speaker into `assets/speakers/` and point `photo:`

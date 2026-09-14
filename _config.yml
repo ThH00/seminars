@@ -1,7 +1,8 @@
 title: "Department Seminar Series"
 description: "Fall 2026 seminar schedule, calendar, and flyers"
 baseurl: "/seminars" # subpath, e.g. "/seminars" if hosted at username.github.io/seminars — leave "" for a root site
-url: "https://thh00.github.io/seminars/" # e.g. "https://yourusername.github.io"
+future: true # without this, Jekyll silently hides any seminar dated after today — required since this site lists upcoming talks
+url: "https://thh00.github.io" # e.g. "https://yourusername.github.io" — DOMAIN ONLY, no /seminars here (baseurl handles that)
 
 # --- Collections ---
 # Every markdown file in _seminars/ becomes one seminar page.
