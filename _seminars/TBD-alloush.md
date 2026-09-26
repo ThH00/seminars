@@ -5,6 +5,7 @@ affiliation: "Computational Mechanics Lab, Department of Mechanical Engineering,
 date: 2027-02-01
 date_tbd: true
 location: "TBD"
+photo: /assets/speakers/TBD-alloush.png
 abstract: |
   Abstract to be announced.
 bio: |
