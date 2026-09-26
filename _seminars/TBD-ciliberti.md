@@ -2,7 +2,8 @@
 title: "Title to be announced"
 speaker: "Danilo Ciliberti, PhD"
 affiliation: "Department of Industrial Engineering, University of Naples Federico II, Italy"
-date: "TBD"
+date: 2027-02-01
+date_tbd: true
 location: "TBD"
 abstract: |
   Abstract to be announced.

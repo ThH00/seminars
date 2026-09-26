@@ -2,7 +2,8 @@
 title: "Title to be announced"
 speaker: "Mhamad Mahdi Alloush, PhD"
 affiliation: "Computational Mechanics Lab, Department of Mechanical Engineering, American University of Beirut"
-date: "TBD"
+date: 2027-02-01
+date_tbd: true
 location: "TBD"
 abstract: |
   Abstract to be announced.

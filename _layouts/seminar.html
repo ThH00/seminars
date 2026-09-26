@@ -15,7 +15,7 @@ layout: default
     {% endif %}
     <div class="seminar-meta">
       <p><strong>Speaker:</strong> {{ page.speaker }}{% if page.affiliation %}, {{ page.affiliation }}{% endif %}</p>
-      <p><strong>Date:</strong> {{ page.date | date: "%A, %B %-d, %Y" }}
+      <p><strong>Date:</strong> {% if page.date_tbd %}To be announced{% else %}{{ page.date | date: "%A, %B %-d, %Y" }}{% endif %}
         {% if page.start_time %} &middot; {{ start_combo | date: "%-I:%M %p" }}{% if page.end_time %}–{{ end_combo | date: "%-I:%M %p" }}{% endif %}{% endif %}
       </p>
       {% if page.location %}<p><strong>Location:</strong> {{ page.location }}</p>{% endif %}

@@ -2,7 +2,8 @@
 title: "Title to be announced"
 speaker: "Professor Charbel Tawk"
 affiliation: "Assistant Professor of Mechanical Engineering, Lebanese American University (LAU)"
-date: "TBD"
+date: 2027-02-01
+date_tbd: true
 location: "TBD"
 abstract: |
   Abstract to be announced.

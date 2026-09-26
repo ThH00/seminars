@@ -28,7 +28,7 @@ permalink: /
       {% endif %}
       <div>
         <a href="{{ seminar.url | relative_url }}"><strong>{{ seminar.title }}</strong></a><br>
-        {{ seminar.date | date: "%B %-d, %Y" }} &middot; {{ seminar.speaker }}{% if seminar.affiliation %}, {{ seminar.affiliation }}{% endif %}
+        {% if seminar.date_tbd %}Date to be announced{% else %}{{ seminar.date | date: "%B %-d, %Y" }}{% endif %} &middot; {{ seminar.speaker }}{% if seminar.affiliation %}, {{ seminar.affiliation }}{% endif %}
       </div>
     </li>
   {% endif %}
@@ -54,7 +54,7 @@ permalink: /
       {% endif %}
       <div>
         <a href="{{ seminar.url | relative_url }}">{{ seminar.title }}</a><br>
-        {{ seminar.date | date: "%B %-d, %Y" }} &middot; {{ seminar.speaker }}{% if seminar.affiliation %}, {{ seminar.affiliation }}{% endif %}
+        {% if seminar.date_tbd %}Date to be announced{% else %}{{ seminar.date | date: "%B %-d, %Y" }}{% endif %} &middot; {{ seminar.speaker }}{% if seminar.affiliation %}, {{ seminar.affiliation }}{% endif %}
       </div>
     </li>
   {% endif %}

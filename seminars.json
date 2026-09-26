@@ -3,7 +3,8 @@ layout: null
 permalink: /seminars.json
 ---
 [
-{% for seminar in site.seminars %}
+{% assign dated_seminars = site.seminars | where_exp: "s", "s.date_tbd != true" %}
+{% for seminar in dated_seminars %}
   {% assign s_combo = seminar.date | date: "%Y-%m-%d" | append: " " | append: seminar.start_time %}
   {% assign e_combo = seminar.date | date: "%Y-%m-%d" | append: " " | append: seminar.end_time %}
   {
