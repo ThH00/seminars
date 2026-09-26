@@ -5,6 +5,7 @@ affiliation: "Assistant Professor of Mechanical Engineering, Lebanese American U
 date: 2027-02-01
 date_tbd: true
 location: "TBD"
+photo: /assets/speakers/TBD-tawk.png
 abstract: |
   Abstract to be announced.
 bio: |

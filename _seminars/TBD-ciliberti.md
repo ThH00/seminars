@@ -5,6 +5,7 @@ affiliation: "Department of Industrial Engineering, University of Naples Federic
 date: 2027-02-01
 date_tbd: true
 location: "TBD"
+photo: /assets/speakers/TBD-ciliberti.png
 abstract: |
   Abstract to be announced.
 bio: |
