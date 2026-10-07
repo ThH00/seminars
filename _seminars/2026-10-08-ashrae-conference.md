@@ -4,6 +4,7 @@ speaker: "ASHRAE Lebanese Chapter"
 affiliation: "Co-hosted with the Munib & Angela Masri Institute of Energy and Natural Resources and the Department of Mechanical Engineering, American University of Beirut"
 date: 2026-10-08
 location: "American University of Beirut, Beirut, Lebanon"
+photo: /assets/speakers/2026-10-08-ashrae-conference.png
 abstract: |
   A two-day international conference (October 8–9, 2026) convening researchers, practitioners, and industry experts to examine AI-driven solutions and emerging technologies that improve HVAC performance, energy efficiency, and building/urban resilience amid climate change.
 
