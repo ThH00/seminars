@@ -31,6 +31,11 @@ layout: default
     <img class="flyer" src="{{ page.flyer | relative_url }}" alt="Flyer for {{ page.title }}">
   {% endif %}
 
+  {% if page.official_flyer %}
+    <h2>Official Department Announcement</h2>
+    <img class="flyer" src="{{ page.official_flyer | relative_url }}" alt="Official department announcement for {{ page.title }}">
+  {% endif %}
+
   {% if page.abstract %}
     <h2>Abstract</h2>
     <p>{{ page.abstract }}</p>
