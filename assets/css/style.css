@@ -1,58 +1,6 @@
-:root {
-  --ink: #1a1a1a;
-  --muted: #6b6b6b;
-  --accent: #7a3b8a;
-  --border: #e4e4e4;
-  --bg: #fdfdfd;
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  line-height: 1.55;
-}
-
-.wrap {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.site-header {
-  border-bottom: 1px solid var(--border);
-  padding: 18px 0;
-}
-.site-header .wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.site-title {
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--ink);
-  text-decoration: none;
-}
-.site-header nav a {
-  margin-left: 18px;
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-.site-header nav a:first-child { margin-left: 0; }
-.site-header nav a:hover { color: var(--accent); }
-
-main.wrap { padding: 32px 20px 60px; }
-
-h1, h2 { line-height: 1.25; }
-
-a { color: var(--accent); }
+/* Seminar-specific styles.
+   Colors, fonts, header, footer and base typography come from the main site's
+   shared stylesheet: https://thh00.github.io/assets/css/site.css */
 
 .seminar-list {
   list-style: none;
@@ -66,12 +14,12 @@ a { color: var(--accent); }
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
 }
-.seminar-card.past { opacity: 0.7; }
+.seminar-card.past { opacity: 0.75; }
 .seminar-card .thumb {
   width: 96px;
   height: 96px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid var(--border);
   flex-shrink: 0;
 }
@@ -110,7 +58,7 @@ a { color: var(--accent); }
 .tags { margin-top: 8px; }
 .tag {
   display: inline-block;
-  background: #f1e7f4;
+  background: var(--accent-tint);
   color: var(--accent);
   border-radius: 999px;
   padding: 2px 10px;
@@ -121,23 +69,37 @@ a { color: var(--accent); }
 img.flyer {
   max-width: 100%;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   margin: 20px 0;
 }
 
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding: 20px 0 40px;
-  color: var(--muted);
-  font-size: 0.9rem;
+.add-to-calendar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin: 28px 0;
 }
 
 #calendar {
   margin-top: 20px;
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 12px;
+}
+/* Tint FullCalendar to the shared accent color */
+#calendar {
+  --fc-event-bg-color: var(--accent);
+  --fc-event-border-color: var(--accent);
+  --fc-button-bg-color: var(--accent);
+  --fc-button-border-color: var(--accent);
+  --fc-button-hover-bg-color: var(--accent-dark);
+  --fc-button-hover-border-color: var(--accent-dark);
+  --fc-button-active-bg-color: var(--accent-dark);
+  --fc-button-active-border-color: var(--accent-dark);
+  --fc-today-bg-color: var(--accent-tint);
 }
 
 @media (max-width: 480px) {

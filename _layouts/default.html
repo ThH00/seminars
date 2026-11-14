@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }} · Theresa Honein</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+  <!-- Shared look for all of thh00.github.io, served by the main site -->
+  <link rel="stylesheet" href="{{ site.home_url }}/assets/css/site.css">
+  <!-- Seminar-specific pieces (cards, speaker photos, calendar) -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <header class="site-header">
+  {% include site-header.html section="seminars" %}
+
+  <nav class="sub-nav" aria-label="Seminars">
     <div class="wrap">
-      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <nav>
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/calendar/' | relative_url }}">Calendar</a>
-        <a href="{{ '/archive/' | relative_url }}">All Seminars</a>
-      </nav>
+      <span class="sub-nav-title">MECH 797 Graduate Seminars</span>
+      <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} class="active"{% endif %}>Upcoming &amp; Past</a>
+      <a href="{{ '/calendar/' | relative_url }}"{% if page.url == "/calendar/" %} class="active"{% endif %}>Calendar</a>
+      <a href="{{ '/archive/' | relative_url }}"{% if page.url == "/archive/" %} class="active"{% endif %}>All Seminars</a>
     </div>
-  </header>
+  </nav>
 
   <main class="wrap">
     {{ content }}
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>{{ site.description }}</p>
-    </div>
-  </footer>
+  {% include site-footer.html %}
 </body>
 </html>

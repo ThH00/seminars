@@ -1,0 +1,20 @@
+{%- comment -%}
+  Shared header. Keep this file identical in ThH00.github.io and the seminars repo.
+  Pass section="research|teaching|seminars|press" to highlight a nav item.
+  site.home_url is "" on the main site and "https://thh00.github.io" on sub-sites.
+{%- endcomment -%}
+{%- assign home = site.home_url | default: "" -%}
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ home }}/">
+      <span class="brand-name">Theresa Honein</span>
+      <span class="brand-sub">MoM &amp; DaD Lab · Mechanical Engineering · American University of Beirut</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="{{ home }}/publications"{% if include.section == "research" %} class="active" aria-current="page"{% endif %}>Research</a>
+      <a href="{{ home }}/teaching"{% if include.section == "teaching" %} class="active" aria-current="page"{% endif %}>Teaching</a>
+      <a href="{{ home }}/seminars/"{% if include.section == "seminars" %} class="active" aria-current="page"{% endif %}>Seminars</a>
+      <a href="{{ home }}/press"{% if include.section == "press" %} class="active" aria-current="page"{% endif %}>In the Press</a>
+    </nav>
+  </div>
+</header>
