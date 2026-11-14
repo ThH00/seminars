@@ -4,7 +4,7 @@ title: All Seminars
 permalink: /archive/
 ---
 
-# All Seminars This Semester
+# All Seminars
 
 <ul class="seminar-list">
 {% assign all_seminars = site.seminars | sort: "date" %}

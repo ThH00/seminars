@@ -1,6 +1,6 @@
 {%- comment -%}
   Shared header. Keep this file identical in ThH00.github.io and the seminars repo.
-  Pass section="research|teaching|seminars|press" to highlight a nav item.
+  Pass section="research|people|teaching|seminars|press" to highlight a nav item.
   site.home_url is "" on the main site and "https://thh00.github.io" on sub-sites.
 {%- endcomment -%}
 {%- assign home = site.home_url | default: "" -%}
@@ -12,6 +12,7 @@
     </a>
     <nav class="site-nav" aria-label="Main">
       <a href="{{ home }}/publications"{% if include.section == "research" %} class="active" aria-current="page"{% endif %}>Research</a>
+      <a href="{{ home }}/people"{% if include.section == "people" %} class="active" aria-current="page"{% endif %}>People</a>
       <a href="{{ home }}/teaching"{% if include.section == "teaching" %} class="active" aria-current="page"{% endif %}>Teaching</a>
       <a href="{{ home }}/seminars/"{% if include.section == "seminars" %} class="active" aria-current="page"{% endif %}>Seminars</a>
       <a href="{{ home }}/press"{% if include.section == "press" %} class="active" aria-current="page"{% endif %}>In the Press</a>

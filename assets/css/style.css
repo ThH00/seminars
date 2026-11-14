@@ -15,6 +15,8 @@
   border-bottom: 1px solid var(--border);
 }
 .seminar-card.past { opacity: 0.75; }
+/* Thumbnails never shrink, so photos stay circles and flyers keep their shape */
+.seminar-card > a { flex-shrink: 0; display: block; line-height: 0; }
 .seminar-card .thumb {
   width: 96px;
   height: 96px;
@@ -25,12 +27,17 @@
 }
 
 .thumb.thumb-photo {
+  width: 96px;
+  height: 96px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
 }
 .thumb.thumb-photo-sm {
   width: 56px;
   height: 56px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
   object-fit: cover;
   border-radius: 50%;
   align-self: center;
@@ -45,6 +52,7 @@
 .speaker-photo {
   width: 130px;
   height: 130px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
   border: 1px solid var(--border);
@@ -110,5 +118,5 @@ img.flyer {
 
 @media (max-width: 480px) {
   .seminar-card { flex-direction: column; }
-  .seminar-card .thumb { width: 100%; height: auto; max-height: 180px; }
+  .seminar-card .thumb:not(.thumb-photo):not(.thumb-photo-sm) { width: 100%; height: auto; max-height: 180px; }
 }
