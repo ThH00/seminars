@@ -8,7 +8,7 @@ permalink: /
 
 {{ site.description }}
 
-<p><a href="{{ '/calendar/' | relative_url }}">📅 View the full calendar</a></p>
+<p><a href="{{ '/calendar/' | relative_url }}">📅 View the full calendar</a> &middot; <a href="{{ '/archive/' | relative_url }}">All seminars with flyers</a></p>
 
 ## Upcoming Seminars
 

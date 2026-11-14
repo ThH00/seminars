@@ -15,15 +15,6 @@
 <body>
   {% include site-header.html section="seminars" %}
 
-  <nav class="sub-nav" aria-label="Seminars">
-    <div class="wrap">
-      <span class="sub-nav-title">MECH 797 Graduate Seminars</span>
-      <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} class="active"{% endif %}>Upcoming &amp; Past</a>
-      <a href="{{ '/calendar/' | relative_url }}"{% if page.url == "/calendar/" %} class="active"{% endif %}>Calendar</a>
-      <a href="{{ '/archive/' | relative_url }}"{% if page.url == "/archive/" %} class="active"{% endif %}>All Seminars</a>
-    </div>
-  </nav>
-
   <main class="wrap">
     {{ content }}
   </main>
