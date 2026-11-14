@@ -46,7 +46,7 @@ layout: default
     <p>{{ page.bio }}</p>
   {% endif %}
 
-  {% if page.recording %}
+  {% if page.recording and page.recording != "" %}
     <p><a href="{{ page.recording }}">Watch the recording &rarr;</a></p>
   {% endif %}
 
