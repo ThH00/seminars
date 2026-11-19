@@ -28,6 +28,10 @@ layout: default
     </div>
   </div>
 
+  {% if page.short_flyer %}
+    <img class="flyer" src="{{ page.short_flyer | relative_url }}" alt="Short flyer for {{ page.title }}">
+  {% endif %}
+
   {% if page.flyer %}
     <img class="flyer" src="{{ page.flyer | relative_url }}" alt="Flyer for {{ page.title }}">
   {% endif %}
