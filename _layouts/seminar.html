@@ -19,6 +19,7 @@ layout: default
         {% if page.start_time %} &middot; {{ start_combo | date: "%-I:%M %p" }}{% if page.end_time %}–{{ end_combo | date: "%-I:%M %p" }}{% endif %}{% endif %}
       </p>
       {% if page.location %}<p><strong>Location:</strong> {{ page.location }}</p>{% endif %}
+      {% if page.host %}<p><strong>Host:</strong> {{ page.host }}</p>{% endif %}
       {% if page.tags %}
         <p class="tags">
           {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
